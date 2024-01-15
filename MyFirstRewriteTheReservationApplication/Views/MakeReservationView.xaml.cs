@@ -18,9 +18,9 @@ namespace MyFirstRewriteTheReservationApplication.Views
     /// <summary>
     /// Interaction logic for MakeReservationViewModel.xaml
     /// </summary>
-    public partial class MakeReservationViewModel : UserControl
+    public partial class MakeReservationView : UserControl
     {
-        public MakeReservationViewModel()
+        public MakeReservationView()
         {
             InitializeComponent();
         }
