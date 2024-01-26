@@ -1,5 +1,6 @@
 ﻿using MyFirstRewriteTheReservationApplication.Commands;
 using MyFirstRewriteTheReservationApplication.Models;
+using MyFirstRewriteTheReservationApplication.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace MyFirstRewriteTheReservationApplication.ViewModels
 {
@@ -16,10 +18,11 @@ namespace MyFirstRewriteTheReservationApplication.ViewModels
         public IEnumerable<ReservationViewModel> Reservations => _reservations;
 
         public ICommand MakeReservationCommand { get; }
-        public ReservationListingViewModel()
+
+        public ReservationListingViewModel(NavigationService<MakeReservationViewModel> navigationService)
         {
             _reservations = new ObservableCollection<ReservationViewModel>();
-            MakeReservationCommand = new NavigationCommand();
+            MakeReservationCommand = new NavigationCommand<MakeReservationViewModel>(navigationService);
             UpdateReservationObservator();
         }
 
@@ -30,6 +33,11 @@ namespace MyFirstRewriteTheReservationApplication.ViewModels
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(2, 2), "Quan1", DateTime.Now, DateTime.Now)));
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(3, 3), "Quan2", DateTime.Now, DateTime.Now)));
 
+        }
+
+        public static ReservationListingViewModel CreateInstance(NavigationService<MakeReservationViewModel> navigationService)
+        {
+            return new ReservationListingViewModel(navigationService);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyFirstRewriteTheReservationApplication.Commands;
+using MyFirstRewriteTheReservationApplication.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,7 +41,9 @@ namespace MyFirstRewriteTheReservationApplication.ViewModels
 		}
 		private DateTime _endDate;
 
-		public DateTime EndDate
+
+
+        public DateTime EndDate
 		{
 			get { return _endDate; }
 			set { _endDate = value; }
@@ -48,5 +52,10 @@ namespace MyFirstRewriteTheReservationApplication.ViewModels
 		public ICommand SubmitCommand { get; }
 		public ICommand CancelCommand { get; }
 
-	}
+        public MakeReservationViewModel(NavigationService<ReservationListingViewModel> navigationService)
+        {
+			CancelCommand = new NavigationCommand<ReservationListingViewModel>(navigationService);
+        }
+
+    }
 }

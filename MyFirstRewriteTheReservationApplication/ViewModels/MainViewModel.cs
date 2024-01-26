@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyFirstRewriteTheReservationApplication.Store;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,18 @@ namespace MyFirstRewriteTheReservationApplication.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get; set; }
+        private readonly NavigationStore _navigationStore;
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
-        public MainViewModel()
+        public MainViewModel(NavigationStore navigationStore)
         {
-            CurrentViewModel = new ReservationListingViewModel();
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChange += OnCurrentViewModelChange;
+        }
+
+        private void OnCurrentViewModelChange()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
         }
     }
 }

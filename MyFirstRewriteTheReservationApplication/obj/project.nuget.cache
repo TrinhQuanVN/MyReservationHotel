@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AO5g0tJehGSa4EhY3jbOssZfJxvNbRoB81r6e6ApXz9XW2wvFTddhd3wCpClIlNwv5vwbPJf+2nDvKwYpYrVTg==",
+  "dgSpecHash": "1yxhyMPibZSo5xvr9FQgerthq2Ei04z+rh3XAx1xo/V/RT4iognvnmVrkW3AW4eeixyqaJl3mVAitNsgSEVFVQ==",
   "success": true,
-  "projectFilePath": "D:\\C#\\project\\WPF\\MyFirstRewriteTheReservationApplication_ns\\MyFirstRewriteTheReservationApplication\\MyFirstRewriteTheReservationApplication.csproj",
+  "projectFilePath": "D:\\Code\\CSharpWPF\\MyFirstReservaionHotel\\MyReservationHotel\\MyFirstRewriteTheReservationApplication\\MyFirstRewriteTheReservationApplication.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

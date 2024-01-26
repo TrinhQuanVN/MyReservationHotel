@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\C#\project\WPF\MyFirstRewriteTheReservationApplication_ns\MyFirstRewriteTheReservationApplication\obj\Debug\net6.0-windows\
+D:\Code\CSharpWPF\MyFirstReservaionHotel\MyReservationHotel\MyFirstRewriteTheReservationApplication\obj\Debug\net6.0-windows\
 MyFirstRewriteTheReservationApplication
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\C#\project\WPF\MyFirstRewriteTheReservationApplication_ns\MyFirstRewriteTheReservationApplication\App.xaml
+D:\Code\CSharpWPF\MyFirstReservaionHotel\MyReservationHotel\MyFirstRewriteTheReservationApplication\App.xaml
 3-651115779
 
-16392358024
-194618410957
+18-1791681906
+194-1977528901
 MainWindow.xaml;Views\MakeReservationView.xaml;Views\ReservationListingView.xaml;
 
 False

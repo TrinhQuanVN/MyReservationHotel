@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyFirstRewriteTheReservationApplication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8b59f351c69f105897bf8f25422304321905bd6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyFirstRewriteTheReservationApplication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyFirstRewriteTheReservationApplication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

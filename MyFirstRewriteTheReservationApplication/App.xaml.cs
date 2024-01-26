@@ -1,4 +1,6 @@
-﻿using MyFirstRewriteTheReservationApplication.ViewModels;
+﻿using MyFirstRewriteTheReservationApplication.Services;
+using MyFirstRewriteTheReservationApplication.Store;
+using MyFirstRewriteTheReservationApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,11 +16,30 @@ namespace MyFirstRewriteTheReservationApplication
     /// </summary>
     public partial class App : Application
     {
+        private NavigationStore _navigationStore;
+
+        public App()
+        {
+            _navigationStore = new NavigationStore();
+            _navigationStore.CurrentViewModel = CreateReservationListingViewModel();
+        }
+
+        private ReservationListingViewModel CreateReservationListingViewModel()
+        {
+            return ReservationListingViewModel.CreateInstance(new NavigationService<MakeReservationViewModel>(_navigationStore,CreateMakeReservationViewModel));
+        }
+
+        private MakeReservationViewModel CreateMakeReservationViewModel()
+        {
+            return new MakeReservationViewModel(new NavigationService<ReservationListingViewModel>(_navigationStore,CreateReservationListingViewModel));
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                
+                DataContext = new MainViewModel(_navigationStore) 
             };
             MainWindow.Show();
             base.OnStartup(e);
